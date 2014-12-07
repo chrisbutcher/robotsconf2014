@@ -33,6 +33,11 @@ board.on("ready", function() {
     piezo.play(song);
   }
 
+  var ledBlink = function() {
+    led.on();
+    led.off();
+  }
+
   unShoulderChop();
   unElbowChop();
 
@@ -41,27 +46,17 @@ board.on("ready", function() {
   function reset() {
     temporal.queue([
       {
-        delay: 100,
+        delay: 0,
         task: function() {
           playSong();
+          ledBlink();
         }
       }, 
       {
-        delay: 800,
-        task: function() {
-          led.blink();
-        }
-      }, 
-      {
-        delay: 200,
-        task: function() {
-          led.blink();
-        }
-      }, 
-      {
-        delay: 400,
+        delay: 1500,
         task: function() {
           shoulderChop();
+          ledBlink();
           elbowChop();
         }
       },
