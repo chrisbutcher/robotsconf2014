@@ -1,7 +1,3 @@
-// Ideas
-// Robot blinks LEDs just before attacking.
-// Robot plays sound over speaker while attacking.
-// Triggered by switch, resets after chop automatically after 500ms
 var temporal = require("temporal");
 var songs = require("j5-songs");
 var five = require("johnny-five"), 
